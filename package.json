@@ -1,0 +1,55 @@
+{
+  "name": "jfetch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prettier-watch": "onchange '**/*.js' '**/*.json' -- prettier --write {{changed}}",
+    "test": "jest --watchAll",
+    "lint": "eslint . --ignore-path .gitignore"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.10.5",
+    "@babel/plugin-transform-object-assign": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
+    "@types/jest": "^26.0.10",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.2.1",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-spellcheck": "^0.0.17",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "jest-cli": "^26.4.2",
+    "jest-fetch-mock": "^3.0.3",
+    "onchange": "^7.0.2",
+    "prettier": "2.0.5",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "singleQuote": true
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}
