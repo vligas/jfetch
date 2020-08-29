@@ -1,15 +1,15 @@
 {
-  "name": "jfetch",
-  "version": "1.0.0",
+  "name": "@vligas/json-fetch",
+  "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "prettier-watch": "onchange '**/*.js' '**/*.json' -- prettier --write {{changed}}",
     "test": "jest --watchAll",
     "lint": "eslint . --ignore-path .gitignore"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "vligas",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.0",
