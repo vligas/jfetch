@@ -1,4 +1,3 @@
-
 module.exports = (options = {}) => ({
   clearMocks: true,
   rootDir: '.',

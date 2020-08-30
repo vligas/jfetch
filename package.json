@@ -1,11 +1,12 @@
 {
   "name": "@vligas/json-fetch",
-  "version": "0.1.0",
+  "version": "0.1.7",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "prettier-watch": "onchange '**/*.js' '**/*.json' -- prettier --write {{changed}}",
     "test": "jest --watchAll",
+    "build": "babel src --out-dir dist --source-maps",
     "lint": "eslint . --ignore-path .gitignore"
   },
   "author": "vligas",

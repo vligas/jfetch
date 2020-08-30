@@ -1,41 +1,41 @@
 const env = api => {
-    const conf = {
-      targets: {},
-      ...(!api.env('test') && {
-        loose: true,
-      }),
-    };
-
-    switch (api.env()) {
-      case 'development':
-        conf.targets.node = 'current';
-        break;
-      case 'es6':
-        conf.targets.chrome = 52;
-        break;
-      default:
-        conf.targets.ie = 10;
-        break;
-    }
-
-    return ['@babel/preset-env', conf];
+  const conf = {
+    targets: {},
+    ...(!api.env('test') && {
+      loose: true,
+    }),
   };
 
-  module.exports = api => {
-    const presets = [env(api)];
+  switch (api.env()) {
+    case 'development':
+      conf.targets.node = 'current';
+      break;
+    case 'es6':
+      conf.targets.chrome = 52;
+      break;
+    default:
+      conf.targets.ie = 10;
+      break;
+  }
 
-    const plugins = [
-      'babel-plugin-add-module-exports',
-      '@babel/plugin-proposal-optional-chaining',
-      '@babel/plugin-proposal-nullish-coalescing-operator',
-      ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
-      api.env('production') && '@babel/plugin-transform-object-assign',
-      api.env('test') && '@babel/plugin-transform-runtime',
-    ].filter(Boolean);
+  return ['@babel/preset-env', conf];
+};
 
-    return {
-      include: [/src/, /testUtils/, /node_modules/],
-      presets,
-      plugins,
-    };
+module.exports = api => {
+  const presets = [env(api)];
+
+  const plugins = [
+    'babel-plugin-add-module-exports',
+    '@babel/plugin-proposal-optional-chaining',
+    '@babel/plugin-proposal-nullish-coalescing-operator',
+    ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
+    api.env('production') && '@babel/plugin-transform-object-assign',
+    api.env('test') && '@babel/plugin-transform-runtime',
+  ].filter(Boolean);
+
+  return {
+    include: [/src/, /node_modules/],
+    presets,
+    plugins,
   };
+};
